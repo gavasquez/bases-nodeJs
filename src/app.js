@@ -24,8 +24,14 @@ const getPokemonById = require('./js-foundation/06-promises');
 //     console.log({pokemon})
 // });
 // console.log(name)
+const { buildLogger } = require('./plugins');
 
-getPokemonById(1)
-    .then(pokemon => console.log({pokemon}))
-    .catch(error => console.log(error))
-    .finally(() => console.log('Finalizado'));
+const logger = buildLogger('app.js');
+
+logger.log('Hola Mundo');
+logger.error('Esto es algo malo');
+
+// getPokemonById(1)
+//     .then(pokemon => console.log({pokemon}))
+//     .catch(error => console.log(error))
+//     .finally(() => console.log('Finalizado'));
